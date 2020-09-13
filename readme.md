@@ -17,7 +17,7 @@ Via Composer
 $ composer require phpadam/dashboardspatiersstile
 ```
 
-You need to publish [the Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) config file.
+You need to publish [SimplePie Laravel Service Provider](https://github.com/willvincent/Feeds) config file.
 
 ``` bash
 $ php artisan vendor:publish --provider="willvincent\Feeds\FeedsServiceProvider"
