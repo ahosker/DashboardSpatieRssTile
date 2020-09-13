@@ -1,9 +1,7 @@
 # Laravel Dashboard RSS Feed Tile
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
+[![Total Downloads][ico-downloads]][link-packagist]
 
 ![Preview](docs/example.png)
 
@@ -110,12 +108,7 @@ Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/phpadam/dashboardspatiersstile.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/phpadam/dashboardspatiersstile.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/phpadam/dashboardspatiersstile/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
 
 [link-packagist]: https://packagist.org/packages/phpadam/dashboardspatiersstile
-[link-downloads]: https://packagist.org/packages/phpadam/dashboardspatiersstile
-[link-travis]: https://travis-ci.org/phpadam/dashboardspatiersstile
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/phpadam
 [link-contributors]: ../../contributors
