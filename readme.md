@@ -5,7 +5,11 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Use Laravel Dashboard as a News feed by display RSS items.
+
+This tile can be used on [the Spatie Laravel Dashboard](https://docs.spatie.be/laravel-dashboard).
+
+Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -13,6 +17,50 @@ Via Composer
 
 ``` bash
 $ composer require phpadam/dashboardspatiersstile
+```
+
+You need to publish [the Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) config file.
+
+``` bash
+$ php artisan vendor:publish --provider="willvincent\Feeds\FeedsServiceProvider"
+```
+
+In the `dashboard` config file, you must add this configuration in the `tiles` key.
+
+Replacing the RSS feeds with your preferred news sources.
+
+```php
+// in config/dashboard.php
+
+return [
+    // ...
+    'tiles' => [
+        'rsstile' => [
+            'feeds' => 'https://domainone.com/feed.xml,https://domaintwo.com/feed.xml',
+            'refresh_interval_in_seconds' => 60,
+        ]
+    ],
+];
+```
+
+In `app\Console\Kernel.php` you should schedule the `\Phpadam\DashboardSpatieRssTile\Commands\FetchDataFromApiCommand` to run every minute.
+
+```php
+// in app/console/Kernel.php
+
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command(\Phpadam\DashboardSpatieRssTile\Commands\FetchDataFromApiCommand::class)->everyMinute();
+}
+```
+
+
+In your dashboard view you can use the `livewire:RssTile` component.
+
+```html
+<x-dashboard>
+  <livewire:RssTile position="a1" />
+</x-dashboard>
 ```
 
 ## Usage
@@ -37,7 +85,7 @@ If you discover any security related issues, please email author email instead o
 
 ## Credits
 
-- [author name][link-author]
+- [Adam Hosker][link-author]
 - [All Contributors][link-contributors]
 
 ## License

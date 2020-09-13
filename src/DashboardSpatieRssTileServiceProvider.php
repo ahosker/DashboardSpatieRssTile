@@ -27,7 +27,7 @@ class DashboardSpatieRssTileServiceProvider extends ServiceProvider
 
       $this->loadViewsFrom(__DIR__ . '/../resources/views', 'DashboardSpatieRssTile');
 
-      Livewire::component('SpatieRssTile', SpatieRssTileComponent::class);
+      Livewire::component('RssTile', SpatieRssTileComponent::class);
 
 
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'phpadam');
