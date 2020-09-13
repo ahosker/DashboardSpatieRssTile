@@ -5,6 +5,8 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
+![Preview](docs/example.png)
+
 Use [the Spatie Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) as a News feed by display RSS items.
 
 Take a look at [contributing.md](contributing.md) to see a to do list.
@@ -63,11 +65,13 @@ return [
 ```
 
 
+### Customising the view
 
+If you want to customise the view used to render this tile, run this command:
 
-
-
-
+```bash
+php artisan vendor:publish --provider="Phpadam\DashboardSpatieRssTile\DashboardSpatieRssTileServiceProvider" --tag="DashboardSpatieRssTile-views"
+```
 
 
 ## Change log
