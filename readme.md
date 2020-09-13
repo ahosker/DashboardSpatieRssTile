@@ -1,4 +1,4 @@
-# DashboardSpatieRssTile
+# Laravel Dashboard RSS Feed Tile
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -81,6 +81,13 @@ Please see [contributing.md](contributing.md) for details and a todolist.
 
 If you discover any security related issues, please email author email instead of using the issue tracker.
 
+## Dependencies
+- [spatie/laravel-dashboard][https://github.com/spatie/laravel-dashboard] create beautiful dashboards
+- [willvincent/feeds][https://github.com/willvincent/feeds/] A Laravel service provider for including the SimplePie library.
+- [simplepie/simplepie][https://github.com/simplepie/simplepie] RSS and Atom feed parsing in PHP.
+
+Please note as of creating `willvincent/feeds` does not support Laravel 8. A branch has been used to increase compatibility until `willvincent/feeds` is updated.
+
 ## Credits
 
 - [Adam Hosker][link-author]
@@ -88,7 +95,7 @@ If you discover any security related issues, please email author email instead o
 
 ## License
 
-license. Please see the [license file](license.md) for more information.
+Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/phpadam/dashboardspatiersstile.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/phpadam/dashboardspatiersstile.svg?style=flat-square
