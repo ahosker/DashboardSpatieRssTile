@@ -23,6 +23,27 @@ You need to publish [SimplePie Laravel Service Provider](https://github.com/will
 $ php artisan vendor:publish --provider="willvincent\Feeds\FeedsServiceProvider"
 ```
 
+In `app\Console\Kernel.php` you should schedule the `\Phpadam\DashboardSpatieRssTile\Commands\FetchDataFromApiCommand` to run every minute.
+
+```php
+// in app/console/Kernel.php
+
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command(\Phpadam\DashboardSpatieRssTile\Commands\FetchDataFromApiCommand::class)->everyMinute();
+}
+```
+
+In your dashboard view you can use the `livewire:RssTile` component.
+
+```html
+<x-dashboard>
+  <livewire:RssTile position="a1" />
+</x-dashboard>
+```
+
+## Usage
+
 In the `dashboard` config file, you must add this configuration in the `tiles` key.
 
 Replacing the RSS feeds with your preferred news sources.
@@ -41,27 +62,13 @@ return [
 ];
 ```
 
-In `app\Console\Kernel.php` you should schedule the `\Phpadam\DashboardSpatieRssTile\Commands\FetchDataFromApiCommand` to run every minute.
-
-```php
-// in app/console/Kernel.php
-
-protected function schedule(Schedule $schedule)
-{
-    $schedule->command(\Phpadam\DashboardSpatieRssTile\Commands\FetchDataFromApiCommand::class)->everyMinute();
-}
-```
 
 
-In your dashboard view you can use the `livewire:RssTile` component.
 
-```html
-<x-dashboard>
-  <livewire:RssTile position="a1" />
-</x-dashboard>
-```
 
-## Usage
+
+
+
 
 ## Change log
 
@@ -82,9 +89,9 @@ Please see [contributing.md](contributing.md) for details and a todolist.
 If you discover any security related issues, please email author email instead of using the issue tracker.
 
 ## Dependencies
-- [spatie/laravel-dashboard][https://github.com/spatie/laravel-dashboard] create beautiful dashboards
-- [willvincent/feeds][https://github.com/willvincent/feeds/] A Laravel service provider for including the SimplePie library.
-- [simplepie/simplepie][https://github.com/simplepie/simplepie] RSS and Atom feed parsing in PHP.
+- [spatie/laravel-dashboard](https://github.com/spatie/laravel-dashboard) create beautiful dashboards
+- [willvincent/feeds](https://github.com/willvincent/feeds/) A Laravel service provider for including the SimplePie library.
+- [simplepie/simplepie](https://github.com/simplepie/simplepie) RSS and Atom feed parsing in PHP.
 
 Please note as of creating `willvincent/feeds` does not support Laravel 8. A branch has been used to increase compatibility until `willvincent/feeds` is updated.
 
