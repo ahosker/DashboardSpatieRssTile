@@ -5,9 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-Use Laravel Dashboard as a News feed by display RSS items.
-
-This tile can be used on [the Spatie Laravel Dashboard](https://docs.spatie.be/laravel-dashboard).
+Use [the Spatie Laravel Dashboard](https://docs.spatie.be/laravel-dashboard) as a News feed by display RSS items.
 
 Take a look at [contributing.md](contributing.md) to see a to do list.
 
